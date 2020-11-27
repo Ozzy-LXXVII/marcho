@@ -79,7 +79,7 @@
     &__email,
     &__tel,
     &__list-link{
-        display: block;
+        display: inline-block;
         margin-bottom: 10px;
     }
     &__social-list{
@@ -551,4 +551,98 @@
         align-items: center;
     }
 }
+
+.blog{
+    padding: 50px 0 160px;
+    background-image: url(../images/blog-bg.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    &__items{
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        &::after{
+            content: '';
+            position: absolute;
+            right: -20px;
+            top: -25px;
+            width: 126px;
+            height: 53px;
+            background-image: url(../images/decor/blog-decor.svg);
+            z-index: -1;
+        }
+    }
+    &__item{
+        max-width: 370px;
+        border: 1px solid #ececec;
+        transition: all 0.5s ease-in-out;
+        &:hover{
+            border: 1px solid transparent;
+            transform: scale(1.03);
+            box-shadow: 20px 0px 60px 0px rgba(202, 202, 202, 0.35);
+            .blog__item-link{
+                color: $accent;
+                &::after{
+                    background-image: url(../images/icons/arrow-accent.svg);
+                }
+            }
+        }
+    }
+    &__imglink{
+        display: block;
+        border: 1px solid #ececec;
+        img{
+            object-fit: cover;
+            height: 288px;
+        }
+    }
+    &__item-box{
+        padding: 30px 40px;
+    }
+    &__item-info{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+    &__item-author,
+    &__item-date{
+        padding-left: 30px;
+        position: relative;
+        &::before{
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;left: 0;
+            top: 4px;
+        }
+    }
+    &__item-author::before{
+        background-image: url(../images/icons/user-grey.svg);
+    }
+    &__item-date::before{
+        background-image: url(../images/icons/time.svg);
+    }
+    &__item-title{
+        color: $title;
+        @extend %roboto-400;
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+    &__item-link{
+        position: relative;
+    }
+    &__item-link::after{
+        content: '';
+        width: 10px;
+        height: 8px;
+        display: inline-block;
+        margin-left: 5px;
+        background-image: url(../images/icons/arrow.svg);
+    }
+}
+
+
+  
+
+
 @import 'media';
